@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Score</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+	<div class="page-container scores">
+		<div class="full-content">
+			<div class="content">				
+				<div class="go-home">
+					<img class="go-home-btn" src="images/ico-home.png" />
+				</div>
+				<div class="body-content all">
+					<p class="title">Scores</p>
+					<h1>Seleccione<br />una calculadora</h1>
+					<div class="card-content">
+						<div class="card-box">
+							<div class="card" id="card-sm">
+								<img src="images/score-sm.png" />
+								<p class="title-score">Score de Miller<sup>1</sup></p>
+								<p>Score cuando se desconoce colonización por KPC </p>
+							</div>
+							<div class="card" id="card-sr">
+								<img src="images/score-sr.png" />
+								<p class="title-score">Score de Rocas<sup>2,3</sup></p>
+								<p>Score en pacientes Inmunosuprimidos colonizados por KPC</p>
+							</div>
+							<div class="card" id="card-sg">
+								<img src="images/score-sg.png" />
+								<p class="title-score">Score de Giannella<sup>4</sup></p>
+								<p>Score en pacientes No-inmunosuprimidos colonizados por KPC</p>
+							</div>
+							<div class="card" id="card-si">
+								<img src="images/score-si.png" />
+								<p class="title-score">Score Increment<sup>5,15</sup></p>
+								<p>Score en pacientes No-inmunosuprimidos colonizados por KPC</p>
+							</div>
+						</div>						
+					</div>
+					<div style="text-align: justify; padding-left: 20px; padding-right: 20px;">Los Scores que describiremos a continuación, son herramientas de utilidad para la mejor categorización de los pacientes, pero no deben reemplazar el juicio clínico del equipo médico tratante.</div>
+					<div class="btn-about">
+						<a href="./about.html">Acerca de</a>
+					</div>
+					<div class="logo-footer">
+						<img src="images/pfizer-logo.png" />
+						
+					</div>
+				</div>
+				<!---SCORE MILLER-->
+				<div class="body-content miller">
+					<p class="title">Scores</p>
+					<h1>Score de Miller<sup>1</sup></h1>
+					<div class="tabs-content">						
+						<div id="tab-miller">
+							<div class="blocks-content">
+								<div class="block-01">
+									<p><strong>Objetivo:</strong><br />
+									Predecir el riesgo de infección por enterobacterias resistentes a carbapenémicos.</p>
+								</div>
+								<div class="block-02">
+									<p><strong>Población:</strong><br />
+									&ge; 18 años hospitalizados.</p>
+								</div>
+							</div>
+							<div class="factor-content">
+								<div class="factor-01">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo</p>
+										<p>Antimicrobianos 3 meses previos</p>
+									</div>									
+									<div class="btn">
+										<div data-value="4" class="anti-three-month">Sí</div>
+										<div data-value="0" class="anti-three-month">No</div>
+									</div>
+								</div>
+								<div class="factor-02">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo</p>
+										<p>Inmunosupresión 3 meses previos <img class="ico-info" src="images/ico-information.png" /></p>
+									</div>									
+									<div class="btn">
+										<div data-value="3" class="inmu-three-month">Sí</div>
+										<div data-value="0" class="inmu-three-month">No</div>
+									</div>
+								</div>
+								<div class="factor-03">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo</p>
+										<p>Charlson &ge; 4 <img class="ico-info-second" src="images/ico-information.png" /></p>
+									</div>									
+									<div class="btn">
+										<div data-value="2" class="charlson-4">Sí</div>
+										<div data-value="0" class="charlson-4">No</div>
+									</div>
+								</div>
+							</div>
+							<div class="results-content result-miller">
+								<div class="results">
+									<p class="score-text">Puntuación Obtenida:</p>
+									<p class="score-number score-miller"></p>
+								</div>
+								<div class="minimun">
+									<p>Punto de Corte &ge; 5</p>
+								</div>
+								<div class="description">
+									<p><strong>Precisión:</strong><br />
+									79%; es decir que:</p>
+									<ul>
+										<li>este porcentaje de pacientes recibiría un tratamiento empírico adecuado para KPC.</li>
+										<li>el 9% recibiría un esquema amplio</li>
+										<li>el 12% de los pacientes no recibiría el esquema empírico apropiado para KPC.</li>
+									</ul>
+								</div>
+								<div class="sensibility">
+									<p><strong>Sensibilidad:</strong><br />
+									54% y especiﬁcidad 88%.</p>
+								</div>
+								<div class="positive">
+									<p><strong>Valor Predictivo Positivo:</strong><br />
+									59%.</p>
+								</div>
+								<div class="negative">
+									<p><strong>Valor Predictivo Negativo:</strong><br />
+									85%.</p>
+								</div>
+								<div class="resume">
+									<p>Dado que en este score no incluye como factor de riesgo la colonización por KPC, se recomienda validar el mismo en la institución, previo a su utilización.</p>
+								</div>
+								<div class="references">
+									<h2>Referencias</h2>
+									<p>1. Miller BM, Johnson SW. Demographic and infection characteristics of patients with carbapenem-resistant Enterobacteriaceae in a community hospital: Development of a bedside clinical score for risk assessment. Am J Infect Control. 2016 Feb;44(2):134-7. doi: 10.1016/j.ajic.2015.09.006. Epub 2015 Oct 20. PMID: 26492818.  </p>
+								</div>
+							</div>
+							<div class="btn-container">
+								<button class="btn-save miller">Guardar</button>
+								<button class="btn-process">Terminar proceso</button>
+							</div>
+						</div>
+						<div class="logo-footer">
+							<img src="images/pfizer-logo.png" />
+						</div>
+					</div>
+					<div class="popup-01">
+						<div class="block-popup">
+							<p>*Corticoides (prednisona ≥20 mg por 2 semanas), tacrolimus, sirolimus, ciclosporina, micofenolato o globulina antitimocítica</p>
+						</div>					
+						<div class="close">X</div>
+					</div>
+					<div class="popup-02">
+						<div class="block-popup">
+							<img class="img-table" src="images/table-charlson.jpg" />
+							<h2>Referencias</h2>
+							<p class="referencesTitle">Adaptado de:</p>
+							<ul class="txt-references">
+							
+								<li>12. Charlson ME, Pompei P, Ales KL, MacKenzie CR. A new method of classifying prognostic comorbidity in longitudinal studies: development and validation. J Chronic Dis. 1987;40(5):373-83. </li>
+								<li>13. Charlson ME, Carrozzino D, Guidi J, Patierno C. Charlson Comorbidity Index: A Critical Review of Clinimetric Properties. Psychother Psychosom. 2022;91(1):8-35. doi: 10.1159/000521288. Epub 2022 Jan 6. PMID: 34991091</li>
+							</ul>
+						</div>					
+						<div class="close">X</div>
+					</div>
+					<div class="sidebar">
+						<ul class="menu">
+							<li class="active link miller"><div>Score de Miller</div></li>
+							<li class="link rocas"><div>Score de Rocas</div></li>
+							<li class="link gia"><div>Score de Giannella</div></li>
+							<li class="link incremendiv"><div>Score Increment</div></li>
+						</ul>
+					</div>
+				</div>
+				<!---FIN SCORE MILLER-->
+
+
+				<!---SCORE ROCAS-->
+				<div class="body-content rocas">
+					<p class="title">Scores</p>
+					<h1>Score de Rocas<sup>2,3</sup></h1>
+					<div class="tabs-content">
+						<div id="tab-rocas">
+							<div class="blocks-content">
+								<div class="block-01">
+									<p><strong>Objetivo:<sup>2</sup></strong><br />
+									Predecir el riesgo de bacteriemias por KPC en pacientes oncohematológicos.</p>
+								</div>
+								<div class="block-02">
+									<p><strong>Población:<sup>2</sup></strong><br />
+									&ge; 18 años internados con enfermedad oncohematológica o Trasplante de células progenitoras hematopoyética</p>
+								</div>
+							</div>
+							<div class="factor-content">
+								<div class="factor-01">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>2</sup></p>
+										<p>Antimicrobianos previo &ge; 7 días</p>
+									</div>									
+									<div class="btn">
+										<div data-value="2" class="anti-factor">Sí</div>
+										<div data-value="0" class="anti-factor">No</div>
+									</div>
+								</div>
+								<div class="factor-02">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo</p>
+										<p>Hospitalización previa &ge; 10 días<sup>3</sup></p>
+									</div>									
+									<div class="btn">
+										<div data-value="2" class="hospi-factor">Sí</div>
+										<div data-value="0" class="hospi-factor">No</div>
+									</div>
+								</div>
+								<div class="factor-03">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>2</sup></p>
+										<p>Colonización reciente por KPC</p>
+									</div>									
+									<div class="btn">
+										<div data-value="5" class="colo-factor">Sí</div>
+										<div data-value="0" class="colo-factor">No</div>
+									</div>
+								</div>
+							</div>
+							<div class="results-content result-rocas">
+								<div class="results">
+									<p class="score-text">Puntuación Obtenida:</p>
+									<p class="score-number score-rocas"></p>
+								</div>
+								<div class="minimun">
+									<p>Punto de Corte &ge; 7</p>
+								</div>
+								<div class="sensibility">
+									<p><strong>Sensibilidad:</strong><br />
+									35,59%<sup>3</sup>.</p>
+								</div>
+								<div class="especified">
+									<p><strong>Especificidad:</strong><br />
+									98,43%<sup>3</sup>.</p>
+								</div>
+								<div class="positive">
+									<p><strong>Valor Predictivo Positivo:</strong><br />
+										77,7%<sup>3</sup>.</p>
+								</div>
+								<div class="negative">
+									<p><strong>Valor Predictivo Negativo:</strong><br />
+									90,9%<sup>3</sup>.</p>
+								</div>
+								<div class="resume">
+									<p>En aquellos pacientes sin ningún punto permitiría prácticamente descartar la presencia de bacteriemia por KPC.</p>
+								</div>
+								<div class="references">
+									<h2>Referencias</h2>
+									<p>2. Carena AA, Laborde A, Roccia-Rossi I, Palacios CJ, Jordán R, Valledor A, Nenna A, Costantini P, Dictar M, Herrera F; Argentine Group for the Study of Bacteraemias in Cancer and Stem Cell Transplant (ROCAS) Stem Cell Transplant (ROCAS). Proposal of a clinical score to stratify the risk of multidrug-resistant gram-negative rods bacteremia in cancer patients. Braz J Infect Dis. 2020 Jan-Feb;24(1):34-43. doi: 10.1016/j.bjid.2019.11.001. Epub 2019 Dec 15. PMID: 31851901; PMCID: PMC9392047.</p>
+									<p>3.	Herrera F, et al. Development of a Clinical Score to Stratify the Risk for Carbapenem-Resistant Enterobacterales Bacteremia in Patients with Cancer and Hematopoietic Stem Cell Transplantation. Antibiotics (Basel). 2023 Jan 20;12(2):226. doi: 10.3390/antibiotics12020226. PMID: 36830136; PMCID: PMC9952392.</p>
+								</div>
+							</div>
+							<div class="btn-container">
+								<button class="btn-save rocas">Guardar</button>
+								<button class="btn-process">Terminar proceso</button>
+							</div>
+						</div>
+						<div class="logo-footer">
+							<img src="images/pfizer-logo.png" />
+
+						</div>
+					</div>
+					<div class="sidebar">
+						<ul class="menu">
+							<li class="link miller"><div>Score de Miller</div></li>
+							<li class="active link rocas"><div>Score de Rocas</div></li>
+							<li class="link gia"><div>Score de Giannella</div></li>
+							<li class="link incremendiv"><div>Score Increment</div></li>
+						</ul>
+					</div>
+				</div>
+				<!---FIN SCORE ROCAS-->
+
+
+				<!---SCORE GIANNELLA-->
+				<div class="body-content gia">
+					<p class="title">Scores</p>
+					<h1>Score de Giannella<sup>4</sup></h1>
+					<div class="tabs-content">					
+						<div id="tab-gia">
+							<div class="blocks-content">
+								<div class="block-01">
+									<p><strong>Objetivo:<sup>4</sup></strong><br />
+									Predecir el riesgo de bacteriemias por KPC en pacientes colonizados por KPC.</p>
+								</div>
+								<div class="block-02">
+									<p><strong>Población:<sup>4</sup></strong><br />
+									&ge; 18 años hospitalizados con colonización rectal.</p>
+								</div>
+							</div>
+							<div class="factor-content">
+								<div class="factor-01">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>4</sup></p>
+										<p>Ingreso a UCI</p>
+									</div>									
+									<div class="btn">
+										<div data-value="2" class="uci">Sí</div>
+										<div data-value="0" class="uci">No</div>
+									</div>
+								</div>
+								<div class="factor-02">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>4</sup></p>
+										<p>Procedimiento invasivo abdominal</p>
+									</div>									
+									<div class="btn">
+										<div data-value="3" class="inv-ab">Sí</div>
+										<div data-value="0" class="inv-ab">No</div>
+									</div>
+								</div>
+								<div class="factor-03">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>4</sup></p>
+										<p>Quimioterapia/radioterapia</p>
+									</div>									
+									<div class="btn">
+										<div data-value="4" class="quimio-radio">Sí</div>
+										<div data-value="0" class="quimio-radio">No</div>
+									</div>
+								</div>
+								<div class="factor-04">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>4</sup></p>
+										<p>Sitios de colonización adicionales al rectal</p>
+									</div>									
+									<div class="btn">
+										<div data-value="5" class="colo-rec yes-button">Sí</div>
+										<div data-value="0" class="colo-rec no-button">No</div>
+									</div>
+								</div>
+									<div class="factor-04-1" style="display: none;">
+										<div class="text-factor-1" style="display: none;">
+											<p class="subtitle-factor" style="display: none;">Factor de riesgo<sup>4</sup></p>
+											<p style="display: none;">Por favor indique la cantidad de sitios de colonización adicionales al rectal</p>
+										</div>		
+									<div class="btn-optional" >
+										<div class="optional"  data-value="10" style="display: none;">Un sitio adicional</div>
+										<div class="optional"  data-value="15" style="display: none;">Dos sitios adicionales</div>
+										<div class="optional"  data-value="20" style="display: none;">Tres sitios adicionales</div>
+									</div>
+								</div>
+							</div>
+							<div class="results-content result-gia">
+								<div class="results">
+									<p class="score-text">Puntuación Obtenida:</p>
+									<p class="score-number score-gia"></p>
+								</div>
+								<div class="minimun">
+									<p>Punto de Corte &ge; 7</p>
+								</div>
+								<div class="description">
+									<p>El trabajo de Cano A y cols. 14 validó el Score de Gianella para predecir infección por KPC en pacientes colonizados y propuso combinarlo con el score de riesgo de mortalidad a los 30 días obtenido en el estudio ¨INCREMENT¨<sup>14,15</sup> para predecir no sólo el riesgo de infección, sino identiﬁcar pacientes con mayor riesgo de mortalidad. Se observó que con el punto de corte &ge; 7 en el score de Giannella, la infección se desarrolló en 84,8% de los pacientes en el grupo de 7 puntos y en el grupo de 0-6 puntos en 6,3% de los pacientes<sup>14</sup></p>
+								</div>
+								<div class="sensibility">
+									<p><strong>Sensibilidad:</strong><br />
+									92,9%<sup>14</sup>.</p>
+								</div>
+								<div class="especified">
+									<p><strong>Especificidad:</strong><br />
+									86,5%<sup>14</sup>.</p>
+								</div>
+								<div class="positive">
+									<p><strong>Valor Predictivo Positivo:</strong><br />
+									84,8%<sup>14</sup>.</p>
+								</div>
+								<div class="negative">
+									<p><strong>Valor Predictivo Negativo:</strong><br />
+									93,8%<sup>14</sup>.</p>
+								</div>
+								<div class="references">
+									<h2>Referencias</h2>
+									<p>4. Giannella M, Trecarichi EM, De Rosa FG, Del Bono V, Bassetti M, Lewis RE, Losito AR, Corcione S, Saffioti C, Bartoletti M, Maiuro G, Cardellino CS, Tedeschi S, Cauda R, Viscoli C, Viale P, Tumbarello M. Risk factors for carbapenem-resistant Klebsiella pneumoniae bloodstream infection among rectal carriers: a prospective observational multicentre study. Clin Microbiol Infect. 2014 Dec;20(12):1357-62. doi: 10.1111/1469-0691.12747. Epub 2014 Aug 11. PMID: 24980276.</p>
+									<p>14. Cano A, et al. Risks of Infection and Mortality Among Patients Colonized With Klebsiella pneumoniae Carbapenemase-Producing K. pneumoniae: Validation of Scores and Proposal for Management. Clin Infect Dis. 2018 Apr 3;66(8):1204-1210. doi: 10.1093/cid/cix991. PMID: 29126110.</p>
+								</div>
+							</div>
+							<div class="btn-container">
+								<button class="btn-save gia">Guardar</button>
+								<button class="btn-process">Terminar proceso</button>
+							</div>
+						</div>
+						<div class="logo-footer">
+							<img src="images/pfizer-logo.png" />
+
+						</div>
+					</div>
+					<div class="sidebar">
+						<ul class="menu">
+							<li class="link miller"><div>Score de Miller</div></li>
+							<li class="link rocas"><div>Score de Rocas</div></li>
+							<li class="active link gia"><div>Score de Giannella</div></li>
+							<li class="link incremendiv"><div>Score Increment</div></li>
+						</ul>
+					</div>
+				</div>
+				<!---FIN SCORE GIANNELLA-->
+
+
+				<!---SCORE INCREMENT-->
+				<div class="body-content increment">
+					<p class="title">Scores</p>
+					<h1>Score INCREMENT<sup>5,15</sup></h1>
+					<div class="tabs-content">
+						<div id="tab-incr">
+							<div class="blocks-content">
+								<div class="block-01">
+									<p><strong>Objetivo:</strong><br />
+									Predecir la mortalidad en pacientes con bacteriemias debido a Enterobacterias Productoras de Carbapenemasas (EPC) </p>
+								</div>
+								<div class="block-02">
+									<p><strong>Población:</strong><br />
+									Población adulta<sup>15</sup>  con bacteriemia por ERC.</p>
+								</div>
+							</div>
+							<div class="factor-content">
+								<div class="factor-01">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>5,15</sup></p>
+										<p>Sepsis severa o shock séptico</p>
+									</div>									
+									<div class="btn">
+										<div data-value="5" class="sepsis">Sí</div>
+										<div data-value="0" class="sepsis">No</div>
+									</div>
+								</div>
+								<div class="factor-02">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>5,15</sup></p>
+										<p>Pitt Score &ge; 6 <img class="ico-info-third" src="images/ico-information.png" /></p>
+									</div>									
+									<div class="btn">
+										<div data-value="4" class="pitt">Sí</div>
+										<div data-value="0" class="pitt">No</div>
+									</div>
+								</div>
+								<div class="factor-03">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>15</sup></p>
+										<p>Charlson &ge; 2 <img class="ico-info-second" src="images/ico-information.png" /></p>
+									</div>									
+									<div class="btn">
+										<div data-value="3" class="charlson-2">Sí</div>
+										<div data-value="0" class="charlson-2">No</div>
+									</div>
+								</div>
+								<div class="factor-04">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>5,15</sup></p>
+										<p>Foco de bacteriemia distinto a urinario o biliar</p>
+									</div>									
+									<div class="btn">
+										<div data-value="3" class="bacteriemia-option">Sí</div>
+										<div data-value="0" class="bacteriemia-option">No</div>
+									</div>
+								</div>
+								<div class="factor-05">
+									<div class="text-factor">
+										<p class="subtitle-factor">Factor de riesgo<sup>5,15</sup></p>
+										<p>Terapia antimicrobiana inadecuada</p>
+									</div>									
+									<div class="btn">
+										<div data-value="2" class="antimicr-inad">Sí</div>
+										<div data-value="0" class="antimicr-inad">No</div>
+									</div>
+								</div>
+							</div>
+							<div class="results-content result-incr">
+								<div class="results">
+									<p class="score-text">Puntuación Obtenida:</p>
+									<p class="score-number score-incr"></p>
+								</div>
+								<div class="minimun">
+									<p>Baja mortalidad: 0-7<br />
+									Alta mortalidad: 8-15</p>
+								</div>
+								<div class="sensibility">
+									<p><strong>Sensibilidad:</strong><br />
+									83,6%.</p>
+								</div>
+								<div class="especified">
+									<p><strong>Especificidad:</strong><br />
+									60,6%.</p>
+								</div>
+								<div class="positive">
+									<p><strong>Valor Predictivo Positivo:</strong><br />
+									54,1%.</p>
+								</div>
+								<div class="negative">
+									<p><strong>Valor Predictivo Negativo:</strong><br />
+									87%.</p>
+								</div>
+								<div class="references">
+									<h2>Referencias</h2>
+									<p>5. Gutiérrez-Gutiérrez B, et al. Effect of appropriate combination therapy on mortality of patients with bloodstream infections due to carbapenemase-producing Enterobacteriaceae (INCREMENT): a retrospective cohort study. Lancet Infect Dis. 2017 Jul;17(7):726-734. doi: 10.1016/S1473-3099(17)30228-1. Epub 2017 Apr 22. PMID: 28442293.         </p>
+									<p>15.	Gutiérrez-Gutiérrez B, et al. A Predictive Model of Mortality in Patients With Bloodstream Infections due to Carbapenemase-Producing Enterobacteriaceae. Mayo Clin Proc. 2016 Oct;91(10):1362-1371. doi: 10.1016/j.mayocp.2016.06.024. Erratum in: Mayo Clin Proc. 2016 Dec;91(12 ):1843. PMID: 27712635</p>
+								</div>
+							</div>
+							<div class="btn-container">
+								<button class="btn-save incr">Guardar</button>
+								<button class="btn-process">Terminar proceso</button>
+							</div>
+						</div>
+						<div class="logo-footer">
+							<img src="images/pfizer-logo.png" />
+
+						</div>
+					</div>
+					<div class="popup-02">
+						<div class="block-popup">
+							<img class="img-table" src="images/table-charlson.jpg" />
+							<h2>Referencias</h2>
+								<p class="referencesTitle">Adaptado de:</p>
+							<ul class="txt-references">
+								<li>12. Charlson ME, Pompei P, Ales KL, MacKenzie CR. A new method of classifying prognostic comorbidity in longitudinal studies: development and validation. J Chronic Dis. 1987;40(5):373-83. </li>
+								<li>13. Charlson ME, Carrozzino D, Guidi J, Patierno C. Charlson Comorbidity Index: A Critical Review of Clinimetric Properties. Psychother Psychosom. 2022;91(1):8-35. doi: 10.1159/000521288. Epub 2022 Jan 6. PMID: 34991091</li>
+							</ul>
+						</div>					
+						<div class="close">X</div>
+					</div>
+					<div class="popup-03">
+						<div class="block-popup">
+							<img class="img-table" src="images/table-info.png" />
+							<h2>Referencias</h2>
+							<p class="referencesTitle">Adaptado de:</p>
+							<ul class="txt-references">
+								<li>16. Chow JW, Yu VL. Combination antibiotic therapy versus monotherapy for gram-negative bacteraemia: a commentary. Int J Antimicrob Agents. 1999 Jan;11(1):7-12. </li>
+							</ul>
+						</div>					
+						<div class="close">X</div>
+					</div>
+					<div class="sidebar">
+						<ul class="menu">
+							<li class="link miller"><div>Score de Miller</div></li>
+							<li class="link rocas"><div>Score de Rocas</div></li>
+							<li class="link gia"><div>Score de Giannella</div></li>
+							<li class="active link incremendiv"><div>Score Increment</div></li>
+						</ul>
+					</div>
+				</div>
+				<!---FIN SCORE INCREMENT-->
+
+				<!---COMPARATIVA-->
+				<div class="body-content compare">
+					<p class="title">Scores</p>
+					<h1>Resumen de los Scores</h1>
+					<div class="accordion-content">
+						<div class="accordion-block miller">
+							<div class="accordion-label">Score Miller<sup>1</sup></div>
+							<div class="accordion-description">
+								<table class="accordion-table" cellpadding="0" cellspacing="0" border="0">
+									<tbody>
+										<tr>
+											<td><strong>Población</strong></td>
+											<td>&ge; 18 años hospitalizados.<br />
+											Desconoce colonización</td>
+										</tr>
+										<tr>
+											<td><strong>Objetivo</strong></td>
+											<td>Riesgo de infección</td>
+										</tr>
+										<tr>
+											<td><strong>Punto de corte</strong></td>
+											<td>&ge; 5</td>
+										</tr>
+										<tr>
+											<td><strong>Sensibilidad</strong></td>
+											<td>54%</td>
+										</tr>
+										<tr>
+											<td><strong>Especiﬁcidad</strong></td>
+											<td>88%</td>
+										</tr>
+										<tr>
+											<td><strong>VPP</strong></td>
+											<td>59%</td>
+										</tr>
+										<tr>
+											<td><strong>VPN</strong></td>
+											<td>85%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="accordion-block rocas">
+							<div class="accordion-label">Score Roca<sup>2,3</sup></div>
+							<div class="accordion-description">
+								<table class="accordion-table" cellpadding="0" cellspacing="0" border="0">
+									<tbody>
+										<tr>
+											<td><strong>Población</strong></td>
+											<td>&ge; 18 años hospitalizados colonizados con KPC, con enfermedad oncohematológica o trasplante de células progenitoras hematopoyéticas</td>
+										</tr>
+										<tr>
+											<td><strong>Objetivo</strong></td>
+											<td>Riesgo de bacteriemia</td>
+										</tr>
+										<tr>
+											<td><strong>Punto de corte</strong></td>
+											<td>&ge; 7</td>
+										</tr>
+										<tr>
+											<td><strong>Sensibilidad</strong></td>
+											<td>35.59%</td>
+										</tr>
+										<tr>
+											<td><strong>Especiﬁcidad</strong></td>
+											<td>98.43%</td>
+										</tr>
+										<tr>
+											<td><strong>VPP</strong></td>
+											<td>77.7%</td>
+										</tr>
+										<tr>
+											<td><strong>VPN</strong></td>
+											<td>90.9%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="accordion-block gia">
+							<div class="accordion-label">Score Gianella<sup>4,14</sup></div>
+							<div class="accordion-description">
+								<table class="accordion-table" cellpadding="0" cellspacing="0" border="0">
+									<tbody>
+										<tr>
+											<td><strong>Población</strong></td>
+											<td>&ge; 18 años hospitalizados colonizados con KPC</td>
+										</tr>
+										<tr>
+											<td><strong>Objetivo</strong></td>
+											<td>Riesgo de bacteriemia</td>
+										</tr>
+										<tr>
+											<td><strong>Punto de corte</strong></td>
+											<td>&ge; 7</td>
+										</tr>
+										<tr>
+											<td><strong>Sensibilidad</strong></td>
+											<td>92.2%</td>
+										</tr>
+										<tr>
+											<td><strong>Especiﬁcidad</strong></td>
+											<td>84.8%</td>
+										</tr>
+										<tr>
+											<td><strong>VPP</strong></td>
+											<td>84.8%</td>
+										</tr>
+										<tr>
+											<td><strong>VPN</strong></td>
+											<td>93.8%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="accordion-block incr">
+							<div class="accordion-label">Score Increment<sup>5,15</sup></div>
+							<div class="accordion-description">
+								<table class="accordion-table" cellpadding="0" cellspacing="0" border="0">
+									<tbody>
+										<tr>
+											<td><strong>Población</strong></td>
+											<td>&ge; 18 años con bacteriemia por ERC</td>
+										</tr>
+										<tr>
+											<td><strong>Objetivo</strong></td>
+											<td>Mortalidad</td>
+										</tr>
+										<tr>
+											<td><strong>Punto de corte</strong></td>
+											<td>Baja: 0-7<br />Alta: 8-15</td>
+										</tr>
+										<tr>
+											<td><strong>Sensibilidad</strong></td>
+											<td>83.6%</td>
+										</tr>
+										<tr>
+											<td><strong>Especiﬁcidad</strong></td>
+											<td>60.6%</td>
+										</tr>
+										<tr>
+											<td><strong>VPP</strong></td>
+											<td>54.1%</td>
+										</tr>
+										<tr>
+											<td><strong>VPN</strong></td>
+											<td>87%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					
+					</div>
+						<div class="logo-footer">
+							<img src="images/pfizer-logo.png" />
+
+						</div>
+				</div>
+				<!---FIN COMPARATIVA-->
+			</div>				
+		</div>
+	</div>
+</body>
+</html>
