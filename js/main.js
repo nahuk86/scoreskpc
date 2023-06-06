@@ -250,7 +250,7 @@ for (i=0; i<acordeon.length; i++) {
     }
     $(this).addClass('active-answer');
     gianella[0] = Number($(this).attr('data-value'));
-    if(Array.from($('.body-content.gia .active-answer')).length === 4){
+    if(Array.from($('.body-content.gia .active-answer')).length === 4 || Array.from($('.body-content.gia .active-answer')).length === 5){
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
@@ -269,10 +269,11 @@ for (i=0; i<acordeon.length; i++) {
     }
     $(this).addClass('active-answer');
     gianella[1] = Number($(this).attr('data-value'));
-    if(Array.from($('.body-content.gia .active-answer')).length === 4){
+    if(Array.from($('.body-content.gia .active-answer')).length === 4 || Array.from($('.body-content.gia .active-answer')).length === 5){
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
+      $('.score-gia').show();
       $('.btn-save.gia').on('click', function(){
         localStorage.setItem("gianella", gianellaTotal);
       });
@@ -288,10 +289,11 @@ for (i=0; i<acordeon.length; i++) {
     }
     $(this).addClass('active-answer');
     gianella[2] = Number($(this).attr('data-value'));
-    if(Array.from($('.body-content.gia .active-answer')).length === 4){
+    if(Array.from($('.body-content.gia .active-answer')).length === 4 || Array.from($('.body-content.gia .active-answer')).length === 5){
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
+      $('.score-gia').show();
       $('.btn-save.gia').on('click', function(){
         localStorage.setItem("gianella", gianellaTotal);
       });
@@ -307,10 +309,11 @@ for (i=0; i<acordeon.length; i++) {
     }
     $(this).addClass('active-answer');
     gianella[3] = Number($(this).attr('data-value'));
-    if(Array.from($('.body-content.gia .active-answer')).length === 4){
+    if(Array.from($('.body-content.gia .active-answer')).length === 4 || Array.from($('.body-content.gia .active-answer')).length === 5){
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
+      $('.score-gia').show();
       $('.btn-save.gia').on('click', function(){
         localStorage.setItem("gianella", gianellaTotal);
       });
@@ -324,10 +327,11 @@ for (i=0; i<acordeon.length; i++) {
     }
     $(this).addClass('active-answer');
     gianella[3] = Number($(this).attr('data-value'));
-    if(Array.from($('.body-content.gia .active-answer')).length === 5){
+    if(Array.from($('.body-content.gia .active-answer')).length === 4 || Array.from($('.body-content.gia .active-answer')).length === 5){
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
+      $('.score-gia').show();
       $('.btn-save.gia').on('click', function(){
         localStorage.setItem("gianella", gianellaTotal);
       });
@@ -343,6 +347,7 @@ for (i=0; i<acordeon.length; i++) {
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
+      $('.score-gia').show();
       $('.btn-save.gia').on('click', function(){
         localStorage.setItem("gianella", gianellaTotal);
       });
