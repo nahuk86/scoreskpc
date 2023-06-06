@@ -240,6 +240,10 @@ for (i=0; i<acordeon.length; i++) {
     }
   });
 
+  //Gianella 
+
+  // 1 Gianella
+
   $('.uci').on('click', function(){
     if($('.uci').hasClass('active-answer')){
       $('.uci.active-answer').removeClass('active-answer');
@@ -256,6 +260,8 @@ for (i=0; i<acordeon.length; i++) {
       $('.accordion-block.gia').css('display', 'block');
     }
   });
+
+  // 2 Gianella
 
   $('.inv-ab').on('click', function(){
     if($('.inv-ab').hasClass('active-answer')){
@@ -274,6 +280,8 @@ for (i=0; i<acordeon.length; i++) {
     }
   });
 
+// 3 Gianella
+
   $('.quimio-radio').on('click', function(){
     if($('.quimio-radio').hasClass('active-answer')){
       $('.quimio-radio.active-answer').removeClass('active-answer');
@@ -290,6 +298,8 @@ for (i=0; i<acordeon.length; i++) {
       $('.accordion-block.gia').css('display', 'block');
     }
   });
+
+  // 4 Gianella
 
   $('.colo-rec').on('click', function(){
     if($('.colo-rec').hasClass('active-answer')){
@@ -313,7 +323,7 @@ for (i=0; i<acordeon.length; i++) {
       $('.optional.active-answer').removeClass('active-answer');
     }
     $(this).addClass('active-answer');
-    gianella[4] = Number($(this).attr('data-value'));
+    gianella[3] = Number($(this).attr('data-value'));
     if(Array.from($('.body-content.gia .active-answer')).length === 5){
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
@@ -325,20 +335,11 @@ for (i=0; i<acordeon.length; i++) {
     }
   });
 
-  $('.colo-rec').on('click', function(){
+  $('.no-button').on('click', function(){
     // When "no" is clicked in the .colo-rec method, 
     // reset the value in the .optional method by removing the active-answer class and resetting gianella[4]
-    if(Number($(this).attr('data-value')) === 0){
       $('.optional.active-answer').removeClass('active-answer');
-      gianella[4] = 0;
-    }
-
-    if($('.colo-rec').hasClass('active-answer')){
-      $('.colo-rec.active-answer').removeClass('active-answer');
-    }
-    $(this).addClass('active-answer');
-    gianella[3] = Number($(this).attr('data-value'));
-    if(Array.from($('.body-content.gia .active-answer')).length === 4){
+      gianella[3] = 5;
       let gianellaTotal = gianella.reduce((a, b) => a + b);
       $('.results-content.result-gia').css('display', 'block');
       $('.score-gia').text(gianellaTotal);
@@ -346,8 +347,10 @@ for (i=0; i<acordeon.length; i++) {
         localStorage.setItem("gianella", gianellaTotal);
       });
       $('.accordion-block.gia').css('display', 'block');
-    }
-});
+    });
+
+///////FIN Gianella //////////////
+
 
 
   $('.sepsis').on('click', function(){
